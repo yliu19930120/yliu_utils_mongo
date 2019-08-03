@@ -18,3 +18,8 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 }
+
+//这里一定得要。在多模块下，不然编译失败，因为不会把信赖模块给打包。
+jar {
+   enabled = true
+}
