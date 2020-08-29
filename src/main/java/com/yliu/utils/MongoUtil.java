@@ -1,6 +1,7 @@
 package com.yliu.utils;
 
 
+import ch.qos.logback.classic.Level;
 import org.bson.Document;
 import org.slf4j.LoggerFactory;
 
@@ -9,8 +10,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.Logger;
 
 
 
@@ -23,7 +22,7 @@ public class MongoUtil {
 	static{
 		client = new MongoClient(DB_HOST);
 		//关闭驱动日志
-		Logger log = (ch.qos.logback.classic.Logger)LoggerFactory
+		ch.qos.logback.classic.Logger log = (ch.qos.logback.classic.Logger)LoggerFactory
 				.getLogger("org.mongodb.driver");
 		log.setLevel(Level.OFF);
 	}
